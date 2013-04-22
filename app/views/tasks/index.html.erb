@@ -1,16 +1,31 @@
-<div id="sidebar" style="float: left;"></div>
-<div id="content" style="float: left;"></div>
 
 
-<script type="text/javascript">
-$(function() {
-	var tasksData = <%= Task.all.to_json.html_safe %>;
+<div class="wrapper">
+	<div class="container">
 
-	window.TD.initialize(
-		$("#sidebar"), 
-		$("#content"), 
-		tasksData
-		);
-	});
-</script>
+		<div class=row>
+			<h1 class="title">Things To Do</h1>
+		</div>
+
+		<div class="row">
+
+		<div class="span4" id="sidebar" style="float: left;"></div>
+		<div class="span7" id="content" style="float: left;"></div>
+
+		<script type="text/javascript">
+		$(function() {
+			var tasksData = <%= Task.all.to_json.html_safe %>;
+
+			window.TD.initialize(
+				$("#sidebar"), 
+				$("#content"), 
+				tasksData
+				);
+			});
+		</script>
+
+		</div>
+	</div>
+
+</div>
 
